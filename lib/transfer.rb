@@ -1,12 +1,14 @@
 class Transfer
   attr_reader :sender, :receiver
-  attr_accessor :amount, :status
+  attr_accessor :amount, :status, :executed
+
 
 def initialize(sender, receiver, amount=0, status="pending")
 @sender = sender
 @receiver = receiver
 @amount = amount
 @status = status
+@executed = false
 end
 def valid?
   sender.valid? && receiver.valid?
